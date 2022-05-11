@@ -1,11 +1,13 @@
 import React from 'react';
 
+import List from '../List';
+
 import { Container } from './styles';
 
 function Main() {
   return (
         <Container>
-            <h1>Olá mundo!</h1>
+            <List/>
         </Container>
     );
 }
