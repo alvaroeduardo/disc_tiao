@@ -7,6 +7,7 @@ import { Container } from './styles';
 function Main() {
   return (
         <Container>
+            {/* BOTÃO INCLUIR NOVO ALBUM */}
             <List/>
         </Container>
     );

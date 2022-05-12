@@ -21,3 +21,10 @@ export const Table = styled.table`
     width: 100%;
     margin-bottom: 2rem;
 `;
+
+export const HeaderAlbum = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;

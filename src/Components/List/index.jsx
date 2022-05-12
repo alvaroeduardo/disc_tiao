@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, TitleAlbum, Thead, Table } from './styles';
+import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
 import { getAlbums } from '../../Services/utils';
 
 function List() {
@@ -36,13 +36,21 @@ function List() {
 
                     return (
                         <>
-                            <TitleAlbum>Album: {d.name}, {d.year}</TitleAlbum>
+                            <HeaderAlbum>
+                                <TitleAlbum>Album: {d.name}, {d.year}</TitleAlbum>
+                                
+                                {
+                                // BOTÃO PARA ADICIONAR FAIXA
+                                // BOTÃO EXCLUIR ALBUM
+                                }
+                            </HeaderAlbum>
                             <Table>
                                 <Thead>
                                     <tr>
                                         <th>Nº</th>
                                         <th>Faixa</th>
                                         <th>Duração</th>
+                                        <th></th>
                                     </tr>
                                 </Thead>
                                 <tbody>
@@ -62,6 +70,7 @@ function List() {
                                                     <td>{e.number}</td>
                                                     <td>{e.title}</td>
                                                     <td>{minutos} min</td>
+                                                    <td>{/* BOTÃO PARA EXCLUIR FAIXA */}</td>
                                                 </tr>
                                             </>
                                         )
