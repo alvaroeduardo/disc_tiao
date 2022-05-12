@@ -48,12 +48,20 @@ function List() {
                                 <tbody>
                                 {
                                     tracksResponse?.map((e)=>{
+                                        function secMin(secs){
+                                            const min = secs / 60;
+
+                                            return min.toString().replace(".", ":");
+                                        }
+
+                                        const minutos = secMin(e.duration);
+
                                         return (
                                             <>
                                                 <tr>
                                                     <td>{e.number}</td>
                                                     <td>{e.title}</td>
-                                                    <td>{e.duration}</td>
+                                                    <td>{minutos} min</td>
                                                 </tr>
                                             </>
                                         )
