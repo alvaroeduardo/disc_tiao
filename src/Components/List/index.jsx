@@ -4,7 +4,7 @@ import { Container, TitleAlbum, Thead, Table } from './styles';
 import { getAlbums } from '../../Services/utils';
 
 function List() {
-    const [data, setData] = useState(['']);
+    const [data, setData] = useState([]);
 
     const albums = getAlbums();
 
@@ -31,7 +31,7 @@ function List() {
   return (
         <Container>
             {
-                response.map((d)=>{
+                response?.map((d)=>{
                     const tracksResponse = d.tracks;
 
                     return (
@@ -47,7 +47,7 @@ function List() {
                                 </Thead>
                                 <tbody>
                                 {
-                                    tracksResponse.map((e)=>{
+                                    tracksResponse?.map((e)=>{
                                         return (
                                             <>
                                                 <tr>
