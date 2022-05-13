@@ -9,7 +9,7 @@ function Header() {
   return (
     <Container>
         <Img theme={imageTop} />
-        <Title>DISCOGRAFIA</Title>
+        <Title>Discografia</Title>
     </Container>
   )
 }

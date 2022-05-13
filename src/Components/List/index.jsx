@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, TitleAlbum, Thead, Table, HeaderAlbum, ButtonContainer, ButtonS, Text, ImageAdd } from './styles';
+import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
 import { getAlbums } from '../../Services/utils';
-
-import addImage from '../../Img/add.svg'
 
 
 function List() {
@@ -43,14 +41,6 @@ function List() {
                                 {
                                 // BOTÃO EXCLUIR ALBUM
                                 }
-
-                                <ButtonContainer>
-                                    <ButtonS >
-                                        <Text>Inserir nova Faixa</Text>
-
-                                        <ImageAdd src={addImage}/>
-                                    </ButtonS>
-                                </ButtonContainer>
 
                             </HeaderAlbum>
 
