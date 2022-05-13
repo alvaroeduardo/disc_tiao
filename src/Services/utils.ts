@@ -9,3 +9,23 @@ export async function getAlbums(){
         return null;
     }
 }
+
+export async function insertAlbum(data: any) {
+    try {
+        const request = await api.post('/album', data);
+
+        return request;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function insertFaixa(data: any) {
+    try {
+        const request = await api.post('/track', data);
+
+        return request;
+    } catch (error) {
+        return null;
+    }
+}

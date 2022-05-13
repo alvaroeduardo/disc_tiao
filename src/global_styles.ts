@@ -21,3 +21,31 @@ export const Title = styled.h1`
     position: absolute;
     top: 13rem;
 `;
+
+export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4cd137;
+    border: .2rem solid #44bd32;
+    border-radius: 1rem;
+    transition: .1s;
+    &:hover{
+        transition: .1s;
+        background-color: #44bd32
+    };
+    cursor: pointer;
+    outline: none;
+    width: 100%
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+    outline: none;
+    margin-bottom: 1rem
+`;

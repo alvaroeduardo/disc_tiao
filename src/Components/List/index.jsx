@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
+import { Container, TitleAlbum, Thead, Table, HeaderAlbum, ButtonContainer, ButtonS, Text, ImageAdd } from './styles';
 import { getAlbums } from '../../Services/utils';
+
+import addImage from '../../Img/add.svg'
+
 
 function List() {
     const [data, setData] = useState([]);
@@ -26,9 +29,7 @@ function List() {
 
     const response = data.data;
 
-    console.log(response)
-
-  return (
+    return (
         <Container>
             {
                 response?.map((d)=>{
@@ -37,13 +38,22 @@ function List() {
                     return (
                         <>
                             <HeaderAlbum>
-                                <TitleAlbum>Album: {d.name}, {d.year}</TitleAlbum>
+                                <TitleAlbum>Álbum: {d.name}, {d.year}</TitleAlbum>
                                 
                                 {
-                                // BOTÃO PARA ADICIONAR FAIXA
                                 // BOTÃO EXCLUIR ALBUM
                                 }
+
+                                <ButtonContainer>
+                                    <ButtonS >
+                                        <Text>Inserir nova Faixa</Text>
+
+                                        <ImageAdd src={addImage}/>
+                                    </ButtonS>
+                                </ButtonContainer>
+
                             </HeaderAlbum>
+
                             <Table>
                                 <Thead>
                                     <tr>
