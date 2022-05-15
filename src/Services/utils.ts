@@ -29,3 +29,13 @@ export async function insertFaixa(data: any) {
         return null;
     }
 }
+
+export async function getAlbumData(params: any) {
+    try {
+        const request = await api.get('/album?keyword='+params);
+
+        return request.data;
+    } catch (error) {
+        return null;
+    }
+}

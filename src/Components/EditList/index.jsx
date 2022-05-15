@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import {useLocation} from "react-router-dom";
 
 import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
-import { getAlbums } from '../../Services/utils';
-
+import { getAlbumData } from '../../Services/utils';
 import { Link } from "react-router-dom";
 
 
-function List() {
+function EditList() {
+    const search = useLocation().search;
+    const id = new URLSearchParams(search).get('keyword');
     const [data, setData] = useState([]);
+    
 
-    const albums = getAlbums();
+    const albums = getAlbumData(id);
 
     useEffect(
         () => {
@@ -29,9 +32,11 @@ function List() {
 
     const response = data.data;
 
+    console.log(response);
+
     return (
         <Container>
-            {
+{
                 response?.map((d)=>{
                     const tracksResponse = d.tracks;
                     const link="/album?keyword=" + d.name;
@@ -40,7 +45,6 @@ function List() {
                         <>
                             <HeaderAlbum>
                                 <TitleAlbum>Álbum: {d.name}, {d.year}</TitleAlbum>
-                                <Link to={link}>Editar</Link>
                                 {
                                 // BOTÃO EXCLUIR ALBUM
                                 }
@@ -89,4 +93,4 @@ function List() {
     );
 }
 
-export default List;
+export default EditList;
