@@ -39,7 +39,8 @@ export const Button = styled.button`
     };
     cursor: pointer;
     outline: none;
-    width: 100%
+    width: 100%;
+    margin-bottom: 1rem;
 `;
 
 export const Input = styled.input`
