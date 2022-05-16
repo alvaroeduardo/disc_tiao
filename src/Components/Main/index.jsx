@@ -7,7 +7,7 @@ import List from '../List';
 import { Container, ImageAdd } from './styles';
 import { Button, Input } from '../../global_styles';
 import addIcon from '../../Img/add.svg';
-import { insertAlbum } from '../../Services/utils';
+import { insertAlbum, reload } from '../../Services/utils';
 
 const customStyles = {
     overlay: {
@@ -49,7 +49,8 @@ function Main() {
 
     async function onSubmit(data){
         try {
-            await insertAlbum(data)
+            await insertAlbum(data);
+            location.reload();
         } catch (error) {
             console.log(error);
         }

@@ -41,9 +41,6 @@ function List() {
                             <HeaderAlbum>
                                 <TitleAlbum>Álbum: {d.name}, {d.year}</TitleAlbum>
                                 <Link to={link}>Editar</Link>
-                                {
-                                // BOTÃO EXCLUIR ALBUM
-                                }
 
                             </HeaderAlbum>
 

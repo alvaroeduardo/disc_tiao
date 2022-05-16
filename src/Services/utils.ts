@@ -59,3 +59,7 @@ export async function deleteTrack(params: any) {
         return null;
     }
 }
+
+export function reload(){
+    setTimeout(()=>{window.location.reload()}, 2000 );
+}

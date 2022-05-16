@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
 import { Button, Input } from '../../global_styles';
-import { getAlbumData, insertFaixa, deleteAlbum, deleteTrack } from '../../Services/utils';
+import { getAlbumData, insertFaixa, deleteAlbum, deleteTrack, reload } from '../../Services/utils';
 
 const customStyles = {
     overlay: {
@@ -89,7 +89,7 @@ function EditList() {
     async function deleteA(data){
         try {
             await deleteAlbum(data);
-            console.log('deletado')
+            window.location.href = "http://localhost:3000"
         } catch (error) {
             return error;
         }
@@ -99,7 +99,7 @@ function EditList() {
         try {
             await deleteTrack(data);
 
-            console.log('deletado');
+            location.reload();
         } catch (error) {
             return error;
         }
