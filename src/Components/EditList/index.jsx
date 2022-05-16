@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
 import { Button, Input } from '../../global_styles';
-import { getAlbumData, insertFaixa } from '../../Services/utils';
+import { getAlbumData, insertFaixa, deleteAlbum, deleteTrack } from '../../Services/utils';
 
 const customStyles = {
     overlay: {
@@ -86,6 +86,25 @@ function EditList() {
         }
     }
 
+    async function deleteA(data){
+        try {
+            await deleteAlbum(data);
+            console.log('deletado')
+        } catch (error) {
+            return error;
+        }
+    }
+
+    async function deleteT(data){
+        try {
+            await deleteTrack(data);
+
+            console.log('deletado');
+        } catch (error) {
+            return error;
+        }
+    }
+
     return (
         <Container>
 {
@@ -125,7 +144,7 @@ function EditList() {
                                                     <td>{e.number}</td>
                                                     <td>{e.title}</td>
                                                     <td>{minutos} min</td>
-                                                    <td>Remover</td>
+                                                    <td onClick={() =>{deleteT(e.id)}}>Remover</td>
                                                 </tr>
                                             </>
                                         )
@@ -139,7 +158,7 @@ function EditList() {
             }
     
             <Button onClick={()=>{handleRegisterModalOpen()}}>Adicionar nova faixa</Button>
-            <Button>Excluir Álbum</Button>
+            <Button onClick={()=>{deleteA(response[0].id)}}>Excluir Álbum</Button>
 
                 <Modal 
                     isOpen={registerOpen} 

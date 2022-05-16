@@ -39,3 +39,23 @@ export async function getAlbumData(params: any) {
         return null;
     }
 }
+
+export async function deleteAlbum(params: any){
+    try {
+        const request = await api.delete(`/album/${params}`);
+
+        return request;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function deleteTrack(params: any) {
+    try {
+        const request = await api.delete(`/track/${params}`);
+
+        return request;
+    } catch (error) {
+        return null;
+    }
+}
