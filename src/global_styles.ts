@@ -50,3 +50,9 @@ export const Input = styled.input`
     outline: none;
     margin-bottom: 1rem
 `;
+
+export const ImgLogo = styled.img`
+    width: 25px;
+    height: 25px;
+    cursor: pointer
+`;

@@ -4,8 +4,11 @@ import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
 import { Container, TitleAlbum, Thead, Table, HeaderAlbum } from './styles';
-import { Button, Input } from '../../global_styles';
-import { getAlbumData, insertFaixa, deleteAlbum, deleteTrack, reload } from '../../Services/utils';
+import { Button, Input, ImgLogo } from '../../global_styles';
+import { getAlbumData, insertFaixa, deleteAlbum, deleteTrack } from '../../Services/utils';
+
+import rmvImg from '../../Img/remove.svg';
+import backImg from '../../Img/back.svg';
 
 const customStyles = {
     overlay: {
@@ -80,7 +83,7 @@ function EditList() {
         try {
             data.album_id = response[0].id;
             await insertFaixa(data);
-            console.log(data);
+            location.reload();
         } catch (error) {
             return error;
         }
@@ -107,7 +110,7 @@ function EditList() {
 
     return (
         <Container>
-{
+            {
                 response?.map((d)=>{
                     const tracksResponse = d.tracks;
 
@@ -115,7 +118,7 @@ function EditList() {
                         <>
                             <HeaderAlbum>
                                 <TitleAlbum>Álbum: {d.name}, {d.year}</TitleAlbum>
-
+                                <ImgLogo onClick={()=>{window.location.href = "http://localhost:3000"} } src={backImg}/>
                             </HeaderAlbum>
 
                             <Table>
@@ -144,7 +147,7 @@ function EditList() {
                                                     <td>{e.number}</td>
                                                     <td>{e.title}</td>
                                                     <td>{minutos} min</td>
-                                                    <td onClick={() =>{deleteT(e.id)}}>Remover</td>
+                                                    <td><ImgLogo src={rmvImg} onClick={() =>{deleteT(e.id)}}/></td>
                                                 </tr>
                                             </>
                                         )
@@ -171,7 +174,9 @@ function EditList() {
                         <Input type="text" placeholder="Título da faixa" {...register("title")}/>
                         <Input type="number" placeholder="Duração da faixa em segundos" {...register("duration")}/>
 
-                        <Button type="submit">Enviar</Button>
+                        <Button type="submit">
+                            Enviar
+                        </Button>
                     </form>
                 </Modal>
         </Container>
