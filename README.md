@@ -33,3 +33,6 @@ Esta aplicação é uma aplicação MVP (mínimo viável produto).
 2. Por motivos os quais ainda desconheço não consegui fazer a edição de dados via Modal direto da lista pelo qual na importação do ID ele persistia apenas um único valor, sendo assim resolvi criar uma página profile que puxa dados via parâmetros query.
 3.  A barra de pesquisa, por motivos que também desconheço, o código não estava aceitando o método filter, que após algumas boas horas de insistência, batendo a cabeça contra a parede, foi possível fazer a barra de pesquisa funcionar perfeitamente.
 4.  A componentização dos input's, como utilizei o React Hooks Forms, não consegui consegui criar uma solução para componentizar e retornar os dados do hook.
+
+## Imagem do Projeto
+<img src="https://imgur.com/i92lGOZ.png"/>
